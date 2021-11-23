@@ -36,7 +36,7 @@ public static Animal crearRana(String nombre, int edad, String genero) {
 	return new Anfibio(nombre, edad,"selva",genero,"rojo",true);
 }
 public static Animal crearSalamandra(String nombre, int edad, String genero) {
-	ranas++;
+	salamandras++;
 	return new Anfibio(nombre, edad,"selva",genero,"negro",false);
 }
 
