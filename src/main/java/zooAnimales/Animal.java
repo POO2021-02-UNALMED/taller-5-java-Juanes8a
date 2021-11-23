@@ -24,7 +24,7 @@ public class Animal {
 	}
 	
 	public static String totalPorTipo(){
-		return	"Mamiferos: " + (Mamifero.getMamifero().size() ) + '\n' +  "Aves: " + (Ave.getAves().size()) + '\n' + "Reptiles: " + (Reptil.getReptiles().size()) + '\n' + "Peces: " + (Pez.getPeces().size()) + '\n' +"Anfibios: " +  (Anfibio.getAnfibios().size());
+		return	"Mamiferos: " + (Mamifero.getListado().size() ) + '\n' +  "Aves: " + (Ave.getListado().size()) + '\n' + "Reptiles: " + (Reptil.getListado().size()) + '\n' + "Peces: " + (Pez.getListado().size()) + '\n' +"Anfibios: " +  (Anfibio.getListado().size());
 	
 	}
 	
