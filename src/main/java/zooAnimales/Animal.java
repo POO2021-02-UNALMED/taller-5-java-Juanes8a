@@ -1,43 +1,40 @@
 package zooAnimales;
-
-import java.util.Arrays;
-
 import gestion.Zona;
 
 public class Animal {
-	public int totalAnimales;
-	public String nombre;
-	public int edad;
-	public String habitat;
-	public String genero;
+	public static int totalAnimales;
+	protected String nombre;
+	protected int edad;
+	protected String habitat;
+	protected String genero;
 	private Zona[] zona;
 	
 	
 	
 	
-	public Animal(int totalAnimales, String nombre, int edad, String habitat, String genero, Zona[] zona) {
-		super();
-		this.totalAnimales = totalAnimales;
+	public Animal(String nombre, int edad, String habitat, String genero) {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.habitat = habitat;
 		this.genero = genero;
-		this.zona = zona;
+		Animal.totalAnimales++;
 	}
 	public Animal() {
+		Animal.totalAnimales++;
 	}
+	
+	public static String totalPorTipo(){
+		return	"Mamiferos: " + (Mamifero.getMamifero().size() ) + '\n' +  "Aves: " + (Ave.getAves().size()) + '\n' + "Reptiles: " + (Reptil.getReptiles().size()) + '\n' + "Peces: " + (Pez.getPeces().size()) + '\n' +"Anfibios: " +  (Anfibio.getAnfibios().size());
+	
+	}
+	
 	
 	public String movimiento() {
 		return "desplazarse";
 	}
 	
 	
-	public int getTotalAnimales() {
-		return totalAnimales;
-	}
-	public void setTotalAnimales(int totalAnimales) {
-		this.totalAnimales = totalAnimales;
-	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -62,16 +59,16 @@ public class Animal {
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-	public Zona getZona() {
-		return zona;
-	}
-	public void setZona(Zona zona) {
-		this.zona = zona;
-	}
-	@Override
+
+
 	public String toString() {
-		return "Animal [totalAnimales=" + totalAnimales + ", nombre=" + nombre + ", edad=" + edad + ", habitat="
-				+ habitat + ", genero=" + genero + ", zona=" + Arrays.toString(zona) + "]";
+		if(zona!=null) {
+			return "Mi nombre es "+nombre+",tengo una edad d,"+edad+", habito en "+habitat+" y mi genero es "+genero+",  la zona en la que me ubico es "+zona[0].getNombre()+", en el "+(zona[0].getZoo()).getNombre();
+		}
+		else {
+			return "Mi nombre es "+nombre+",tengo una edad d,"+edad+", habito en "+habitat+" y mi genero es "+genero;
+		}
+	
 	}
 	
 	

@@ -1,49 +1,52 @@
 package zooAnimales;
 
-import gestion.Zona;
+import java.util.ArrayList;
+
 
 public class Reptil extends Animal {
-	private Reptil[] listado;
-	private int iguanas;
-	private int serpientes;
+	private static ArrayList<Reptil> listado= new ArrayList<Reptil>();
+	private static int iguanas;
+	private static int serpientes;
 	private String colorEscamas;
 	private int largoCola;
 	
 	
 	
-	public Reptil(int totalAnimales, String nombre, int edad, String habitat, String genero, Zona[] zona,
-			Reptil[] listado, int iguanas, int serpientes, String colorEscamas, int largoCola) {
-		super(totalAnimales, nombre, edad, habitat, genero, zona);
-		this.listado = listado;
-		this.iguanas = iguanas;
-		this.serpientes = serpientes;
+	public Reptil(String nombre, int edad, String habitat, String genero,String colorEscamas, int largoCola) {
+		super.nombre=nombre;
+		super.edad=edad;
+		super.habitat=habitat;
+		super.genero=genero;
+		this.listado=listado;
 		this.colorEscamas = colorEscamas;
 		this.largoCola = largoCola;
+		Animal.totalAnimales++;
+		listado.add(this);
 	}
 	public Reptil() {
+		listado.add(this);
 	}
 	
 	
+	public String movimiento() {
+		return "reptar";
+	}
 	
 	
-	public Reptil getListado() {
-		return listado;
+	public static Animal crearIguana(String nombre, int edad, String genero) {
+		iguanas++;
+		return new Reptil(nombre, edad,"humedal",genero,"verde",3);
 	}
-	public void setListado(Reptil listado) {
-		this.listado = listado;
+	public static Animal crearSerpiente(String nombre, int edad, String genero) {
+		serpientes++;
+		return new Reptil(nombre, edad,"jungla",genero,"blanco",1);
 	}
-	public int getIguanas() {
-		return iguanas;
+	
+	public static ArrayList<Reptil> getListado() {
+	return listado;
+
 	}
-	public void setIguanas(int iguanas) {
-		this.iguanas = iguanas;
-	}
-	public int getSerpientes() {
-		return serpientes;
-	}
-	public void setSerpientes(int serpientes) {
-		this.serpientes = serpientes;
-	}
+
 	public String getColorEscamas() {
 		return colorEscamas;
 	}
@@ -57,5 +60,5 @@ public class Reptil extends Animal {
 		this.largoCola = largoCola;
 	}
 	
-	
+
 }

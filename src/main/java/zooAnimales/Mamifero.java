@@ -1,11 +1,12 @@
 package zooAnimales;
 
-import gestion.Zona;
+import java.util.ArrayList;
+
 
 public class Mamifero extends Animal{
-	private Mamifero[] listado;
-	private int caballos;
-	private int leones;
+	private static ArrayList<Mamifero> listado= new ArrayList<Mamifero>();
+	public static int caballos;
+	public static int leones;
 	private boolean pelaje;
 	private int patas;
 	
@@ -14,43 +15,38 @@ public class Mamifero extends Animal{
 	
 
 	
-	public Mamifero(int totalAnimales, String nombre, int edad, String habitat, String genero, Zona[] zona,
-			Mamifero[] listado, int caballos, int leones, boolean pelaje, int patas) {
-		super(totalAnimales, nombre, edad, habitat, genero, zona);
-		this.listado = listado;
-		this.caballos = caballos;
-		this.leones = leones;
+	public Mamifero( String nombre, int edad, String habitat, String genero,boolean pelaje,int patas) {
+		super.nombre=nombre;
+		super.edad=edad;
+		super.habitat=habitat;
+		super.genero=genero;
 		this.pelaje = pelaje;
 		this.patas = patas;
+		Animal.totalAnimales++;
+		listado.add(this);
 	}
 	public Mamifero() {
+		listado.add(this);
 	}
 	
+
 	
+	public static Animal crearCaballo(String nombre, int edad, String genero) {
+		caballos++;
+		return new Mamifero(nombre, edad,"praderas",genero,true,4);
+	}
+	public static Animal crearLeon(String nombre, int edad, String genero) {
+		leones++;
+		return new Mamifero(nombre, edad,"selva",genero,true,4);
+	}
 	
-	public Mamifero getListado() {
-		return listado;
+	public static ArrayList<Mamifero> getListado() {
+	return listado;
+
 	}
-	public void setListado(Mamifero listado) {
-		this.listado = listado;
-	}
-	public int getCaballos() {
-		return caballos;
-	}
-	public void setCaballos(int caballos) {
-		this.caballos = caballos;
-	}
-	public int getLeones() {
-		return leones;
-	}
-	public void setLeones(int leones) {
-		this.leones = leones;
-	}
+
 	public boolean isPelaje() {
 		return pelaje;
-	}
-	public void setPelaje(boolean pelaje) {
-		this.pelaje = pelaje;
 	}
 	public int getPatas() {
 		return patas;
