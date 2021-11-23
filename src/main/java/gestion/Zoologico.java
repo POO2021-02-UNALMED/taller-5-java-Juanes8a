@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import zooAnimales.Animal;
 
 public class Zoologico {
-	private String nombre;
-	private String ubicacion;
+	public String nombre;
+	public String ubicacion;
 	public ArrayList<Zona> zonas = new ArrayList<Zona>();
 	
 	
@@ -26,7 +26,7 @@ public class Zoologico {
 	public int cantidadTotalAnimales() {
 		int total=0;
 		Animal lista[];
-		for(Zona z:zonas) {
+		for(Zona z: zonas) {
 			total+=z.getAnimales().size();
 		}
 		return total;
@@ -47,14 +47,9 @@ public class Zoologico {
 	public String getNombre() {
 		return nombre;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+
 	public String getUbicacion() {
 		return ubicacion;
-	}
-	public void setUbicacion(String ubicacion) {
-		this.ubicacion = ubicacion;
 	}
 
 	

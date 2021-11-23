@@ -41,7 +41,7 @@ public static Animal crearSalamandra(String nombre, int edad, String genero) {
 }
 
 
-	public static ArrayList<Anfibio> getListado() {
+	public static ArrayList<Anfibio> getAnfibios() {
 	return listado;
 }
 	public String getColorPiel() {

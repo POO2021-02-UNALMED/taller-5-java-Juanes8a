@@ -40,16 +40,16 @@ public class Mamifero extends Animal{
 		return new Mamifero(nombre, edad,"selva",genero,true,4);
 	}
 	
-	public static ArrayList<Mamifero> getListado() {
+	public static ArrayList<Mamifero> getMamiferos() {
 	return listado;
 
 	}
 
 	public boolean isPelaje() {
-		return pelaje;
+		return this.pelaje;
 	}
 	public int getPatas() {
-		return patas;
+		return this.patas;
 	}
 	public void setPatas(int patas) {
 		this.patas = patas;

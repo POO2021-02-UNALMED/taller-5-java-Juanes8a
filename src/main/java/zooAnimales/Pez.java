@@ -51,11 +51,11 @@ public class Pez extends Animal{
 	}
 
 	public String getColorEscamas() {
-		return colorEscamas;
+		return this.colorEscamas;
 	}
 
 	public int getCantidadAletas() {
-		return cantidadAletas;
+		return this.cantidadAletas;
 	}
 
 	

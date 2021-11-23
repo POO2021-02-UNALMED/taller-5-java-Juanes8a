@@ -35,10 +35,10 @@ public class Ave extends Animal{
 	}
 	public static Animal crearAguila(String nombre, int edad, String genero) {
 		aguilas++;
-		return new Ave(nombre, edad,"montana",genero,"blanco y amarrillo");
+		return new Ave(nombre, edad,"montanas",genero,"blanco y amarrillo");
 	}
 	
-	public static ArrayList<Ave> getListado() {
+	public static ArrayList<Ave> getAves() {
 	return listado;
 
 	}
