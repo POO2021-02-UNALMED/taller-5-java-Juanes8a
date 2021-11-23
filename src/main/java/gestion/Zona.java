@@ -3,7 +3,7 @@ package gestion;
 import java.util.ArrayList;
 
 import zooAnimales.Animal;
-import zooAnimales.Ave;
+
 public class Zona {
 	private String nombre;
 	private ArrayList<Zoologico> zoo = new ArrayList<Zoologico>();
